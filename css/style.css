@@ -15,12 +15,9 @@ button{
 
 .box:hover{
     background-color: red;
-    transition: 1.3s;
-    
 }
 
 .box{
-    padding: 2rem;
     background-color: rgb(214, 66, 66);
     border: 2px solid black;
     aspect-ratio: 1/1;

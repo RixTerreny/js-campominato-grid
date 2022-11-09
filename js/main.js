@@ -9,18 +9,17 @@ function gridGenerator(numBox) {
     let totBox = numBox*numBox;
     boxContainer.innerHTML = ""
 
+    
     for (let i = 0; i < totBox; i++) {
 
-        boxContainer.innerHTML += `<div class='box ' style='flex-basis: calc(100%/ ${numBox})'>`;
+        boxContainer.innerHTML += `<div class='box ' style='flex-basis: calc(100%/ ${numBox})'> ${i+1}`;
 
-        // const divInnerBox = boxContainer.querySelector(".box:last-child")
-        boxContainer.innerHTML+= i + 1;
+        const divInnerBox = document.querySelector(".box");
 
-        // console.log(divInnerBox);
+        console.log(divInnerBox);
 
-        
-        boxContainer.addEventListener("click", function(){
-            boxContainer.classList.toggle("bg-primary");
+        divInnerBox.addEventListener("click", function(){
+            divInnerBox.classList.toggle("bg-primary");
             console.log( i + 1);
         });
     }

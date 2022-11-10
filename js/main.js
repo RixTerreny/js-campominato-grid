@@ -11,25 +11,26 @@ function gridGenerator(numBox) {
 
     
     for (let i = 0; i < totBox; i++) {
+        boxContainer.innerHTML += `<div class='box ' style='flex-basis: calc(100%/ ${numBox})'> ${i+1}</div>`;
+        }
 
-        boxContainer.innerHTML += `<div class='box ' style='flex-basis: calc(100%/ ${numBox})'> ${i+1}`;
+        const boxesList= boxContainer.querySelectorAll(".box");
 
-        const divInnerBox = document.querySelector(".box");
+        for (let i = 0; i < boxesList.length; i++) {
+            const box = boxesList[i];
 
-        console.log(divInnerBox);
-
-        divInnerBox.addEventListener("click", function(){
-            divInnerBox.classList.toggle("bg-primary");
-            console.log( i + 1);
-        });
+            box.addEventListener("click", function(){
+                this.classList.toggle("bg-primary");
+                console.log( i + 1);
+            });
     }
+
 }
+    
 
 btn.addEventListener("click", function(){
     btn.classList.toggle("bg-primary");
     btn.classList.toggle("bg-secondary");
-
+    console.log(124);
     gridGenerator(10);
-})
-
-
+});
